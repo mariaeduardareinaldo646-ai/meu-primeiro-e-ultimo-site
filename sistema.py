@@ -39,7 +39,7 @@ class Entregador(Pessoa):
 
 
 class Entrega:
-    a):def __init__(self, cliente, entregador, distanci
+    def __init__(self, cliente, entregador, distancia):
         self.__cliente = cliente
         self.__entregador = entregador
         self.__distancia = distancia
@@ -68,10 +68,10 @@ class EntregaExpressa(Entrega):
     def calcular_frete(self):
         return self._Entrega__distancia * 4 + 10 
 
-def sistema_entrega():
+    def sistema_entrega():
 
-    print("================================")
-    print("       SISTEMA DE ENTREGA")
+    print("================================") 
+    print("       SISTEMA DE ENTREGA       ")
     print("================================")
 
 
@@ -111,7 +111,8 @@ def sistema_entrega():
         entrega = EntregaExpressa(
             cliente,
             entregador,
-            distancia
+            distancia 
+
         )
 
     else:
@@ -119,6 +120,4 @@ def sistema_entrega():
         return
 
     entrega.mostrar_entrega()
-
-
-sistema_entrega()
+    sistema_entrega() 

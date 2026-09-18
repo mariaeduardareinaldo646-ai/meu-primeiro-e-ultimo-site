@@ -45,6 +45,3 @@ class Entrega:
             return self.__distancia * 2 
 
      def mostrar_entrega(self): 
-
-
- 
