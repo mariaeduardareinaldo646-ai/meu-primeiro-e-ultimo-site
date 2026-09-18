@@ -1,123 +1,175 @@
+
+class Loja:
+
+  def __init__(self, nome_loja, endereco):
+    self.nome_loja = nome_loja
+    self.endereco = endereco
+
+  def mostrar_loja(self):
+    print(f"Loja: {self.nome_loja} - Endereço: {self.endereco}")
+
+
+
+class Produto1:
+
+  def __init__(self, nome, preco, estoque):
+    self.nome = nome
+    self.__preco = preco 
+    self.estoque = estoque
+
+  
+  @property
+  def preco(self):
+    return self.__preco
+
+  def mostrar_produtos(self):
+    print(f"Produto: {self.nome} - R$ {self.__preco}")
+    print(f"Estoque: {self.estoque}")
+
+
+class Produto2:
+
+  def __init__(self, nome, preco, estoque):
+    self.nome = nome
+    self.__preco = preco 
+    self.estoque = estoque
+
+  
+  @property
+  def preco(self):
+    return self.__preco
+
+  def mostrar_produtos(self):
+    print(f"Produto: {self.nome} - R$ {self.__preco}")
+    print(f"Estoque: {self.estoque}")
+
+
+
+class Produto3:
+
+  def __init__(self, nome, preco, estoque):
+    self.nome = nome
+    self.__preco = preco 
+    self.estoque = estoque
+
+  
+  @property
+  def preco(self):
+    return self.__preco
+
+  def mostrar_produtos(self):
+    print(f"Produto: {self.nome} - R$ {self.__preco}")
+    print(f"Estoque: {self.estoque}")
+
+
+class Produto4:
+
+  def __init__(self, nome, preco, estoque):
+    self.nome = nome
+    self.__preco = preco 
+    self.estoque = estoque
+
+  
+  @property
+  def preco(self):
+    return self.__preco
+
+  def mostrar_produtos(self):
+    print(f"Produto: {self.nome} - R$ {self.__preco}")
+    print(f"Estoque: {self.estoque}")
+
+
+class Produto5:
+
+  def __init__(self, nome, preco, estoque):
+    self.nome = nome
+    self.__preco = preco 
+    self.estoque = estoque
+
+  
+  @property
+  def preco(self):
+    return self.__preco
+
+  def mostrar_produtos(self):
+    print(f"Produto: {self.nome} - R$ {self.__preco}")
+    print(f"Estoque: {self.estoque}")
+
+
+
 class Pessoa:
-    def __init__(self, nome, telefone):
-        self.__nome = nome          
-        self.__telefone = telefone  
 
-    
-    def get_nome(self):
-        return self.__nome
-
-    def get_telefone(self):
-        return self.__telefone
+  def __init__(self, nome):
+    self.nome = nome
 
 
-class Cliente(Pessoa):
-    def __init__(self, nome, telefone, endereco):
-        super().__init__(nome, telefone)
-        self.__endereco = endereco
 
-    def get_endereco(self):
-        return self.__endereco
+class Cliente1(Pessoa):
 
-    def mostrar_dados(self):
-        print("Nome:", self.get_nome())
-        print("Telefone:", self.get_telefone())
-        print("Endereço:", self.get_endereco())
+  def __init__(self, nome_pessoa, nome_produto):
+    super().__init__(nome_pessoa)  
+    self.nome_produto = nome_produto
 
-class Entregador(Pessoa):
-    def __init__(self, nome, telefone, veiculo):
-        super().__init__(nome, telefone)
-        self.__veiculo = veiculo
+  def mostrar_comp(self):
+    print(f"{self.nome} comprou {self.nome_produto}")
 
-    def get_veiculo(self):
-        return self.__veiculo
+class Cliente2(Pessoa):
 
-    def mostrar_dados(self):
-        print("Nome:", self.get_nome())
-        print("Telefone:", self.get_telefone())
-        print("Veículo:", self.get_veiculo())
+  def __init__(self, nome_pessoa, nome_produto):
+    super().__init__(nome_pessoa)  
+    self.nome_produto = nome_produto
+
+  def mostrar_comp(self):
+    print(f"{self.nome} comprou {self.nome_produto}")
 
 
-class Entrega:
-    def __init__(self, cliente, entregador, distancia):
-        self.__cliente = cliente
-        self.__entregador = entregador
-        self.__distancia = distancia
 
-    
-    def calcular_frete(self):
-        return self.__distancia * 2
+class Funcionario1(Pessoa):
 
-    def mostrar_entrega(self):
-        print("\n===== DADOS DA ENTREGA =====")
-        print("Cliente:", self.__cliente.get_nome())
-        print("Endereço:", self.__cliente.get_endereco())
-        print("Entregador:", self.__entregador.get_nome())
-        print("Veículo:", self.__entregador.get_veiculo())
-        print("Distância:", self.__distancia, "km")
-        print("Valor do frete: R$", self.calcular_frete())
+  def __init__(self, nome_fun, pedido):
+    super().__init__(nome_fun)  
+    self.pedido = pedido
 
+  def entregar(self):
+    print(f"{self.nome} entregou {self.pedido}")
+    print("Pedido entregue")
 
-class EntregaNormal(Entrega):
-    def calcular_frete(self):
-        return self._Entrega__distancia * 2
+class Funcionario2(Pessoa):
+
+  def __init__(self, nome_fun, pedido):
+    super().__init__(nome_fun)  
+    self.pedido = pedido
+
+  def entregar(self):
+    print(f"{self.nome} entregou {self.pedido}")
+    print("Pedido entregue")
 
 
-class EntregaExpressa(Entrega):
+produto = Produto1("Kit: shampoo, condicionador, mascara de hidratação", 120, 80) 
+produto = Produto2("Creme para cabelos cacheados, e lisos", 50, 80) 
+produto = Produto3("Kit: Óleo de tratamendo coco, super óleo e multibenefícios", 60, 70) 
+produto = Produto4("Kit: Creme e gelatina", 70, 50) 
+produto = Produto5("Kit: Creme e óleo de cabelo", 60, 90) 
 
-    def calcular_frete(self):
-        return self._Entrega__distancia * 4 + 10 
+cliente = Cliente1("Mikaelle Melo", "shampoo, condicionador, mascara de hidratação")
+cliente = Cliente2("Sofia Gomes", "Kit: Óleo de tratamendo coco, super óleo e multibenefícios")
 
-    def sistema_entrega():
+funcionario = Funcionario1("Francisco Raimundo", "shampoo, condicionador, mascara de hidratação") 
+funcionario = Funcionario2("Alfredo Texugueiro", "Kit: Óleo de tratamendo coco, super óleo e multibenefícios")
 
-      print("================================") 
-      print("       SISTEMA DE ENTREGA       ")
-      print("================================")
+loja = Loja("Loja Principal", "Rua Girassol, 67")
 
 
-    nome_cliente = input("Digite o nome do cliente: ")
-    telefone_cliente = input("Digite o telefone: ")
-    endereco = input("Digite o endereço: ")
 
-    cliente = Cliente(nome_cliente, telefone_cliente, endereco)
-
-    nome_entregador = input("\nDigite o nome do entregador: ")
-    telefone_entregador = input("Digite o telefone do entregador: ")
-    veiculo = input("Digite o veículo do entregador: ")
-
-    entregador = Entregador(
-        nome_entregador,
-        telefone_entregador,
-        veiculo
-    )
-
-    
-    distancia = float(input("\nDigite a distância da entrega em km: "))
-
-    print("\nEscolha o tipo de entrega:")
-    print("1 - Normal")
-    print("2 - Expressa")
-
-    opcao = input("Digite sua opção: ")
-
-    if opcao == "1":
-        entrega = EntregaNormal(
-            cliente,
-            entregador,
-            distancia
-        )
-
-    elif opcao == "2":
-        entrega = EntregaExpressa(
-            cliente,
-            entregador,
-            distancia
-
-        )
-
-    else:
-        print("Opção inválida!")
-        return
-
-    entrega.mostrar_entrega()
-    sistema_entrega() 
+loja.mostrar_loja()
+print("-" * 50)
+produto.mostrar_produtos3()
+print("-" * 50) 
+Produto1.mostrar_produtos()
+print("-" * 50)
+Cliente1.mostrar_comp() 
+print("-" * 50) 
+Cliente2.mostrar_comp() 
+print("-" * 50)
+Funcionario1.entregar() 
+Funcionario2.entregar()
